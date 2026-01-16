@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, ShieldCheck, Mail } from "lucide-react";
+import { Users, ShieldCheck, Mail, Target, Award, Globe, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -10,9 +10,9 @@ export default function AboutPage() {
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center mb-16">
                 <Badge variant="outline" className="mb-4 text-primary bg-primary/5 border-primary/20">About AI Connect</Badge>
-                <h1 className="text-4xl font-bold tracking-tight mb-6">Empowering Your Workflow with Intelligence</h1>
+                <h1 className="text-4xl font-bold tracking-tight mb-6">Simplifying AI Adoption</h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                    We are a team of tech enthusiasts, developers, and automation experts dedicated to navigating the rapidly evolving landscape of Artificial Intelligence.
+                    AI Connect is an independently operated AI and automation review website founded by <span className="text-foreground font-semibold">Harsh Sharma</span>, based in Jaipur, Rajasthan, India.
                 </p>
             </div>
 
@@ -27,51 +27,98 @@ export default function AboutPage() {
                 <div>
                     <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
                     <p className="text-lg text-muted-foreground mb-6">
-                        To provide transparent, in-depth, and actionable intelligence on AI tools that help businesses and individuals work smarter, not harder.
+                        The platform was created to simplify how people understand, compare, and adopt modern AI tools in real-world scenarios. Our specific goals are to:
                     </p>
                     <ul className="space-y-4">
                         <li className="flex items-start">
-                            <ShieldCheck className="h-6 w-6 text-primary mr-3 mt-1" />
+                            <BookOpen className="h-6 w-6 text-primary mr-3 mt-1" />
                             <div>
-                                <h3 className="font-semibold">Unbiased Testing</h3>
-                                <p className="text-muted-foreground text-sm">We don't just read the landing page; we put tools through real-world scenarios.</p>
+                                <h3 className="font-semibold">Demystify Complexity</h3>
+                                <p className="text-muted-foreground text-sm">Break down complex AI tools into understandable insights.</p>
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <Users className="h-6 w-6 text-primary mr-3 mt-1" />
+                            <ShieldCheck className="h-6 w-6 text-primary mr-3 mt-1" />
                             <div>
-                                <h3 className="font-semibold">Community First</h3>
-                                <p className="text-muted-foreground text-sm">Our reviews are shaped by feedback from our active community of 15k+ professionals.</p>
+                                <h3 className="font-semibold">Honest Evaluations</h3>
+                                <p className="text-muted-foreground text-sm">Highlight real use-cases, benefits, and limitations so you can choose based on suitability, not trends.</p>
                             </div>
                         </li>
                     </ul>
+                    <p className="mt-6 text-muted-foreground italic">
+                        "We believe users deserve honest evaluations before investing time or money into any AI software."
+                    </p>
                 </div>
             </div>
 
-            {/* Team (Mock) */}
+            {/* Background & Founder */}
             <div className="mb-24">
-                <h2 className="text-3xl font-bold text-center mb-12">Meet the Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[1, 2, 3].map((i) => (
-                        <Card key={i} className="text-center pt-6">
+                <div className="bg-muted/30 rounded-3xl p-8 md:p-12">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-bold mb-6 text-center">Our Background</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div className="prose prose-gray">
+                                <p className="text-lg text-muted-foreground mb-4">
+                                    AI Connect is managed by an individual publisher with a strong interest in:
+                                </p>
+                                <ul className="space-y-2 mb-6">
+                                    <li className="flex items-center text-muted-foreground"><Globe className="h-4 w-4 mr-2 text-primary" /> Artificial intelligence</li>
+                                    <li className="flex items-center text-muted-foreground"><Globe className="h-4 w-4 mr-2 text-primary" /> Automation technologies</li>
+                                    <li className="flex items-center text-muted-foreground"><Globe className="h-4 w-4 mr-2 text-primary" /> Digital productivity systems</li>
+                                    <li className="flex items-center text-muted-foreground"><Globe className="h-4 w-4 mr-2 text-primary" /> Emerging software platforms</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <Card className="border-primary/10 shadow-sm">
+                                    <CardContent className="pt-6">
+                                        <p className="text-muted-foreground mb-4">
+                                            While AI Connect is not a registered company, the website is operated with professional editorial standards, ethical publishing practices, and clear transparency.
+                                        </p>
+                                        <div className="flex items-center gap-4 pt-4 border-t">
+                                            <div className="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">HS</div>
+                                            <div>
+                                                <p className="font-bold">Harsh Sharma</p>
+                                                <p className="text-xs text-muted-foreground">Founder & Publisher</p>
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* What Sets Us Apart */}
+            <div className="mb-24 text-center">
+                <h2 className="text-3xl font-bold mb-12">What Sets Us Apart</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {[
+                        { title: "Independent", desc: "Independent and research-driven content", icon: ShieldCheck },
+                        { title: "Unbiased", desc: "No sponsored or paid reviews", icon: Award },
+                        { title: "Transparent", desc: "Clear disclosure of affiliate relationships", icon: Users },
+                        { title: "Balanced", desc: "Balanced coverage of strengths and weaknesses", icon: Target },
+                    ].map((item, i) => (
+                        <Card key={i} className="pt-6 hover:shadow-md transition-shadow">
                             <CardContent>
-                                <div className="w-24 h-24 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
-                                    <Users className="h-10 w-10 text-muted-foreground" />
+                                <div className="w-16 h-16 bg-primary/5 rounded-full mx-auto mb-4 flex items-center justify-center text-primary">
+                                    <item.icon className="h-8 w-8" />
                                 </div>
-                                <h3 className="font-bold text-lg">Alex Johnson</h3>
-                                <p className="text-primary text-sm font-medium mb-3">AI Research Lead</p>
-                                <p className="text-muted-foreground text-sm">Former Data Scientist with a passion for NLP and generative models.</p>
+                                <p className="font-medium text-lg">{item.desc}</p>
                             </CardContent>
                         </Card>
                     ))}
                 </div>
+                <p className="mt-12 text-lg text-muted-foreground font-medium">
+                    Every review published on AI Connect is written with the reader’s interest as the top priority.
+                </p>
             </div>
 
             {/* CTA */}
             <div className="bg-primary/5 rounded-3xl p-12 text-center">
-                <h2 className="text-3xl font-bold mb-4">Have a Tool to Suggest?</h2>
+                <h2 className="text-3xl font-bold mb-4">Have Questions?</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                    We are always looking for the next game-changer. If you've built something amazing, let us know.
+                    Whether you have a specific question about a tool or just want to connect, we'd love to hear from you.
                 </p>
                 <Link href="/contact">
                     <Button size="lg" className="h-12 px-8">
