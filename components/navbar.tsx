@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -88,7 +88,10 @@ export function Navbar() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="right">
-                            <div className="flex flex-col gap-6 mt-8">
+                            <SheetTitle className="text-lg font-semibold text-center mt-4">
+                                Menu
+                            </SheetTitle>
+                            <div className="flex flex-col items-center text-center gap-6 mt-8">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.href}
@@ -101,7 +104,9 @@ export function Navbar() {
                                         {link.name}
                                     </Link>
                                 ))}
-                                <Button className="w-full mt-4">Get Standard Access</Button>
+                                <Link href="/reviews">
+                                    <Button className="w-full mt-4">Explore tools</Button>
+                                </Link>
                             </div>
                         </SheetContent>
                     </Sheet>
