@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, ShieldCheck, Mail, Target, Award, Globe, BookOpen } from "lucide-react";
+import { ShieldCheck, Mail, Award, Globe, BookOpen, Users, Target } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -10,48 +10,16 @@ export default function AboutPage() {
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center mb-16">
                 <Badge variant="outline" className="mb-4 text-primary bg-primary/5 border-primary/20">About AI Connect</Badge>
-                <h1 className="text-4xl font-bold tracking-tight mb-6">Simplifying AI Adoption</h1>
+                <h1 className="text-4xl font-bold tracking-tight mb-6">About Us</h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                     AI Connect is an independently operated AI and automation review website founded by <span className="text-foreground font-semibold">Harsh Sharma</span>, based in Jaipur, Rajasthan, India.
                 </p>
+                <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
+                    The platform was created to simplify how people understand, compare, and adopt modern AI tools in real-world scenarios.
+                </p>
             </div>
 
-            {/* Mission */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-                <div>
-                    <div className="aspect-square bg-muted rounded-2xl flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
-                        <Target className="h-32 w-32 text-primary/40" />
-                    </div>
-                </div>
-                <div>
-                    <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-                    <p className="text-lg text-muted-foreground mb-6">
-                        The platform was created to simplify how people understand, compare, and adopt modern AI tools in real-world scenarios. Our specific goals are to:
-                    </p>
-                    <ul className="space-y-4">
-                        <li className="flex items-start">
-                            <BookOpen className="h-6 w-6 text-primary mr-3 mt-1" />
-                            <div>
-                                <h3 className="font-semibold">Demystify Complexity</h3>
-                                <p className="text-muted-foreground text-sm">Break down complex AI tools into understandable insights.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start">
-                            <ShieldCheck className="h-6 w-6 text-primary mr-3 mt-1" />
-                            <div>
-                                <h3 className="font-semibold">Honest Evaluations</h3>
-                                <p className="text-muted-foreground text-sm">Highlight real use-cases, benefits, and limitations so you can choose based on suitability, not trends.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <p className="mt-6 text-muted-foreground italic">
-                        "We believe users deserve honest evaluations before investing time or money into any AI software."
-                    </p>
-                </div>
-            </div>
-
-            {/* Background & Founder */}
+            {/* Our Background */}
             <div className="mb-24">
                 <div className="bg-muted/30 rounded-3xl p-8 md:p-12">
                     <div className="max-w-4xl mx-auto">
@@ -89,6 +57,42 @@ export default function AboutPage() {
                 </div>
             </div>
 
+            {/* Our Mission */}
+            <div className="mb-24 max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                    Our mission is to:
+                </p>
+                <ul className="space-y-4 mb-8">
+                    <li className="flex items-start">
+                        <BookOpen className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
+                        <div>
+                            <h3 className="font-semibold">Break down complex AI tools into understandable insights</h3>
+                            <p className="text-muted-foreground text-sm">We simplify technical jargon to help you understand what tools actually do.</p>
+                        </div>
+                    </li>
+                    <li className="flex items-start">
+                        <ShieldCheck className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
+                        <div>
+                            <h3 className="font-semibold">Highlight real use-cases, benefits, and limitations</h3>
+                            <p className="text-muted-foreground text-sm">Honest evaluations that show both strengths and weaknesses.</p>
+                        </div>
+                    </li>
+                    <li className="flex items-start">
+                        <Target className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
+                        <div>
+                            <h3 className="font-semibold">Help users choose tools based on suitability, not trends</h3>
+                            <p className="text-muted-foreground text-sm">We focus on what works for your specific needs.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div className="bg-primary/5 p-6 rounded-xl border-l-4 border-primary">
+                    <p className="text-muted-foreground italic">
+                        "We believe users deserve honest evaluations before investing time or money into any AI software."
+                    </p>
+                </div>
+            </div>
+
             {/* What Sets Us Apart */}
             <div className="mb-24 text-center">
                 <h2 className="text-3xl font-bold mb-12">What Sets Us Apart</h2>
@@ -109,8 +113,8 @@ export default function AboutPage() {
                         </Card>
                     ))}
                 </div>
-                <p className="mt-12 text-lg text-muted-foreground font-medium">
-                    Every review published on AI Connect is written with the reader’s interest as the top priority.
+                <p className="mt-12 text-lg text-muted-foreground font-medium max-w-3xl mx-auto">
+                    Every review published on AI Connect is written with the reader's interest as the top priority.
                 </p>
             </div>
 
