@@ -9,10 +9,10 @@ export default function AboutPage() {
         <div className="container py-20 px-4 md:px-8 mx-auto">
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center mb-16">
-                <Badge variant="outline" className="mb-4 text-primary bg-primary/5 border-primary/20">About AI Connect</Badge>
-                <h1 className="text-4xl font-bold tracking-tight mb-6">About Us</h1>
+                <Badge variant="outline" className="mb-4 text-primary bg-primary/5 border-primary/20">About Us</Badge>
+                <h1 className="text-4xl font-bold tracking-tight mb-6">About Your AI</h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                    AI Connect is an independently operated AI and automation review website founded by <span className="text-foreground font-semibold">Harsh Sharma</span>, based in Jaipur, Rajasthan, India.
+                    About Your AI is an independently operated AI and automation review website founded by <span className="text-foreground font-semibold">Harsh Sharma</span>, based in Jaipur, Rajasthan, India.
                 </p>
                 <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
                     The platform was created to simplify how people understand, compare, and adopt modern AI tools in real-world scenarios.
@@ -27,7 +27,7 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                             <div className="prose prose-gray">
                                 <p className="text-lg text-muted-foreground mb-4">
-                                    AI Connect is managed by an individual publisher with a strong interest in:
+                                    About Your AI is managed by an individual publisher with a strong interest in:
                                 </p>
                                 <ul className="space-y-2 mb-6">
                                     <li className="flex items-center text-muted-foreground"><Globe className="h-4 w-4 mr-2 text-primary" /> Artificial intelligence</li>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                                 <Card className="border-primary/10 shadow-sm">
                                     <CardContent className="pt-6">
                                         <p className="text-muted-foreground mb-4">
-                                            While AI Connect is not a registered company, the website is operated with professional editorial standards, ethical publishing practices, and clear transparency.
+                                            While About Your AI is not a registered company, the website is operated with professional editorial standards, ethical publishing practices, and clear transparency.
                                         </p>
                                         <div className="flex items-center gap-4 pt-4 border-t">
                                             <div className="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">HS</div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                     ))}
                 </div>
                 <p className="mt-12 text-lg text-muted-foreground font-medium max-w-3xl mx-auto">
-                    Every review published on AI Connect is written with the reader's interest as the top priority.
+                    Every review published on About Your AI is written with the reader's interest as the top priority.
                 </p>
             </div>
 

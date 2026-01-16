@@ -10,7 +10,7 @@ export default function ContactPage() {
         <div className="container py-20 px-4 md:px-8 mx-auto">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl font-bold tracking-tight mb-4">Contact AI Connect</h1>
+                    <h1 className="text-4xl font-bold tracking-tight mb-4">Contact About Your AI</h1>
                     <p className="text-lg text-muted-foreground">
                         We welcome questions, feedback, collaboration inquiries, and communication related to AI tools, automation platforms, and content published on this website.
                     </p>
@@ -28,7 +28,7 @@ export default function ContactPage() {
                                 <p className="text-muted-foreground mb-4">
                                     For questions related to website content, AI tool reviews, affiliate partnerships, or corrections, you can contact us via email.
                                 </p>
-                                <p className="font-semibold text-lg text-primary">📧 contact@aiconnect.in</p>
+                                <p className="font-semibold text-lg text-primary">📧 support@aboutyourai.com</p>
                             </div>
 
                             {/* Founder Info */}
@@ -123,7 +123,7 @@ export default function ContactPage() {
                         </Card>
 
                         <p className="text-xs text-center text-muted-foreground">
-                            AI Connect is an independently operated informational website.
+                            About Your AI is an independently operated informational website.
                         </p>
                     </div>
                 </div>

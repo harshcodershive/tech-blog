@@ -27,7 +27,7 @@ export function Footer() {
                                 <Zap className="h-5 w-5 text-primary-foreground fill-current" />
                             </div>
                             <span className="font-bold text-xl tracking-tight text-foreground">
-                                AI<span className="text-primary">Connect</span>
+                                About<span className="text-primary">YourAI</span>
                             </span>
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -86,7 +86,7 @@ export function Footer() {
                 <Separator className="my-8" />
 
                 <div className="text-center text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} AI Connect. All rights reserved.
+                    &copy; {new Date().getFullYear()} About Your AI. All rights reserved.
                 </div>
             </div>
         </footer>

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Connect | Find reviews of AI tools",
+  title: "About Your AI | Find Reviews of AI Tools",
   description: "Professional reviews, guides, and insights on the latest AI tools and automation strategies.",
 };
 

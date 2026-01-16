@@ -43,7 +43,7 @@ export default function MethodologyPage() {
                     <Badge variant="outline" className="mb-4 text-primary bg-primary/5 border-primary/20">Transparency</Badge>
                     <h1 className="text-4xl font-bold tracking-tight mb-6">How We Research & Review AI Tools</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed">
-                        At AI Connect, we follow a structured and transparent methodology to ensure that our content remains accurate, fair, and valuable. Trust is our currency.
+                        At aboutyourai, we follow a structured and transparent methodology to ensure that our content remains accurate, fair, and valuable. Trust is our currency.
                     </p>
                 </div>
 
@@ -74,7 +74,7 @@ export default function MethodologyPage() {
                         <div className="space-y-4">
                             <h2 className="text-2xl font-bold">Affiliate Transparency</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                AI Connect may use affiliate links in certain articles. However, these links:
+                                aboutyourai may use affiliate links in certain articles. However, these links:
                             </p>
                             <ul className="list-disc leading-relaxed text-muted-foreground ml-6">
                                 <li>Do not influence tool selection</li>

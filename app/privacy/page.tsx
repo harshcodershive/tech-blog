@@ -2,11 +2,11 @@ export default function PrivacyPage() {
     return (
         <div className="container py-20 px-4 md:px-8 mx-auto">
             <div className="max-w-3xl mx-auto prose prose-gray">
-                <h1 className="text-3xl font-bold mb-2">Privacy Policy – AI Connect</h1>
+                <h1 className="text-3xl font-bold mb-2">Privacy Policy – aboutyourai</h1>
                 <p className="text-sm text-muted-foreground mb-8">Last Updated: January 16, 2026</p>
 
                 <p className="mb-4">
-                    AI Connect respects your privacy and is committed to protecting any personal information you may provide while using this website. This Privacy Policy explains how information is collected, used, and safeguarded.
+                    aboutyourai respects your privacy and is committed to protecting any personal information you may provide while using this website. This Privacy Policy explains how information is collected, used, and safeguarded.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
                 <p className="mb-4">We do not sell, rent, or trade personal information to third parties.</p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">3. Third-Party Services</h2>
-                <p className="mb-2">AI Connect may use third-party tools such as:</p>
+                <p className="mb-2">aboutyourai may use third-party tools such as:</p>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                     <li>Analytics services (e.g., traffic analysis)</li>
                     <li>Affiliate platforms</li>

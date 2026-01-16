@@ -2,15 +2,15 @@ export default function TermsPage() {
     return (
         <div className="container py-20 px-4 md:px-8 mx-auto">
             <div className="max-w-3xl mx-auto prose prose-gray">
-                <h1 className="text-3xl font-bold mb-2">Terms of Service – AI Connect</h1>
+                <h1 className="text-3xl font-bold mb-2">Terms of Service – aboutyourai</h1>
                 <p className="text-sm text-muted-foreground mb-8">Last Updated: January 16, 2026</p>
 
                 <p className="mb-4">
-                    By accessing or using AI Connect, you agree to be bound by the following Terms of Service. If you do not agree with these terms, please discontinue use of the website.
+                    By accessing or using aboutyourai, you agree to be bound by the following Terms of Service. If you do not agree with these terms, please discontinue use of the website.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">1. Use of Content</h2>
-                <p className="mb-2">All content on AI Connect is provided for informational and educational purposes only.</p>
+                <p className="mb-2">All content on aboutyourai is provided for informational and educational purposes only.</p>
                 <p className="font-medium mt-2">You may:</p>
                 <ul className="list-disc pl-6 mb-2 space-y-1">
                     <li>Read and share content for personal, non-commercial use</li>
@@ -22,7 +22,7 @@ export default function TermsPage() {
                 </ul>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">2. No Professional Advice</h2>
-                <p className="mb-2">Content published on AI Connect does not constitute:</p>
+                <p className="mb-2">Content published on aboutyourai does not constitute:</p>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                     <li>Legal advice</li>
                     <li>Financial advice</li>
@@ -32,11 +32,11 @@ export default function TermsPage() {
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">3. Accuracy of Information</h2>
                 <p className="mb-4">
-                    While we strive for accuracy, AI tools and software frequently change. AI Connect does not guarantee that all information is complete, current, or error-free.
+                    While we strive for accuracy, AI tools and software frequently change. aboutyourai does not guarantee that all information is complete, current, or error-free.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">4. External Links</h2>
-                <p className="mb-2">AI Connect may contain links to third-party websites. We are not responsible for:</p>
+                <p className="mb-2">aboutyourai may contain links to third-party websites. We are not responsible for:</p>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                     <li>Content on external sites</li>
                     <li>Privacy practices of third parties</li>
@@ -45,7 +45,7 @@ export default function TermsPage() {
                 <p className="mb-4">Visiting external links is done at your own discretion.</p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">5. Limitation of Liability</h2>
-                <p className="mb-2">AI Connect shall not be liable for:</p>
+                <p className="mb-2">aboutyourai shall not be liable for:</p>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                     <li>Any direct or indirect damages</li>
                     <li>Loss of data, revenue, or business</li>

@@ -28,7 +28,7 @@ export function Navbar() {
                         <Zap className="h-5 w-5 text-primary-foreground fill-current" />
                     </div>
                     <span className="font-bold text-xl tracking-tight text-foreground">
-                        AI<span className="text-primary">Connect</span>
+                        About<span className="text-primary">YourAI</span>
                     </span>
                 </Link>
 
@@ -65,7 +65,7 @@ export function Navbar() {
                         <div className="bg-popover text-popover-foreground text-xs p-3 rounded-md shadow-md border border-border relative">
                             <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-popover border-t border-l border-border rotate-45"></div>
                             <p className="leading-relaxed">
-                                AI Connect is supported by our readers. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.
+                                aboutyourai is supported by our readers. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.
                             </p>
                         </div>
                     </div>
