@@ -39,8 +39,8 @@ export function Navbar() {
                             key={link.href}
                             href={link.href}
                             className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href
-                                    ? "text-primary"
-                                    : "text-muted-foreground"
+                                ? "text-primary"
+                                : "text-muted-foreground"
                                 }`}
                         >
                             {link.name}
@@ -55,6 +55,21 @@ export function Navbar() {
                         </Link>
                     ))}
                 </nav>
+
+                {/* Affiliate Disclosure Hover */}
+                <div className="hidden lg:block group relative cursor-help mr-4">
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground/70 hover:text-primary transition-colors border-b border-dotted border-muted-foreground/50">
+                        Advertising Disclosure
+                    </span>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 w-72 z-50">
+                        <div className="bg-popover text-popover-foreground text-xs p-3 rounded-md shadow-md border border-border relative">
+                            <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-popover border-t border-l border-border rotate-45"></div>
+                            <p className="leading-relaxed">
+                                AI Connect is supported by our readers. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Call to Action */}
                 <div className="hidden md:flex">
@@ -77,8 +92,8 @@ export function Navbar() {
                                         key={link.href}
                                         href={link.href}
                                         className={`text-lg font-medium transition-colors hover:text-primary ${pathname === link.href
-                                                ? "text-primary"
-                                                : "text-muted-foreground"
+                                            ? "text-primary"
+                                            : "text-muted-foreground"
                                             }`}
                                     >
                                         {link.name}
