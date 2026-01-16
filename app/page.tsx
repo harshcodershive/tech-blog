@@ -6,49 +6,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Cpu, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { reviewsData } from "@/lib/reviews-data";
+import { blogPosts } from "@/lib/blog-data";
 
 export default function Home() {
-  const featuredTools = [
-    {
-      title: "Jasper AI",
-      category: "Content Creation",
-      rating: 4.8,
-      description: "The enterprise-grade AI copilot for marketing teams.",
-      slug: "jasper-ai",
-    },
-    {
-      title: "Notion AI",
-      category: "Productivity",
-      rating: 4.7,
-      description: "Connect your wiki, docs, and projects with an AI assistant.",
-      slug: "notion-ai",
-    },
-    {
-      title: "Midjourney",
-      category: "Design",
-      rating: 4.9,
-      description: "The most advanced AI art generator for professional creatives.",
-      slug: "midjourney",
-    },
-  ];
-
-  const recentGuides = [
-    {
-      title: "How to Automate Your Email Marketing with AI",
-      date: "Oct 12, 2024",
-      readTime: "8 min read",
-    },
-    {
-      title: "Top 10 AI Tools for Developers in 2025",
-      date: "Oct 10, 2024",
-      readTime: "12 min read",
-    },
-    {
-      title: "The Ultimate Guide to Prompt Engineering",
-      date: "Oct 08, 2024",
-      readTime: "15 min read",
-    },
-  ];
+  const featuredTools = reviewsData.slice(0, 3);
+  const recentGuides = blogPosts.slice(0, 3);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -71,12 +34,16 @@ export default function Home() {
               Discover professional-grade AI tools, in-depth reviews, and automation strategies to scale your business and productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="h-12 px-8 text-lg rounded-full">
-                Explore Top Tools <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8 text-lg rounded-full">
-                Read Latest Guides
-              </Button>
+              <Link href="/reviews">
+                <Button size="lg" className="h-12 px-8 text-lg rounded-full">
+                  Explore Top Tools <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/blog">
+                <Button size="lg" variant="outline" className="h-12 px-8 text-lg rounded-full">
+                  Read Latest Insights <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -90,7 +57,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight mb-2">Editor's Choice</h2>
               <p className="text-muted-foreground">Top-rated tools tested by our experts.</p>
             </div>
-            <Link href="/reviews/top-ai-tools" className="text-primary font-medium hover:underline flex items-center">
+            <Link href="/reviews" className="text-primary font-medium hover:underline flex items-center">
               View All <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
@@ -119,10 +86,12 @@ export default function Home() {
                     </CardDescription>
                   </CardHeader>
                   <CardFooter className="mt-auto pt-0">
-                    <Button variant="outline" className="w-full group">
-                      Read Review
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    <Link href={`/reviews/${tool.slug}`} className="w-full">
+                      <Button variant="outline" className="w-full group">
+                        Read Review
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               </motion.div>
@@ -175,12 +144,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentGuides.map((guide, index) => (
-              <Link href="#" key={index} className="group cursor-pointer">
+              <Link href={`/blog/${guide.slug}`} key={index} className="group cursor-pointer">
                 <div className="aspect-video bg-muted rounded-xl mb-4 overflow-hidden relative">
                   <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
                   {/* Placeholder for image */}
-                  <div className="flex items-center justify-center h-full text-muted-foreground/50">
-                    Cover Image
+                  <div className="flex items-center justify-center h-full text-muted-foreground/30 font-bold text-xl">
+                    {guide.category}
                   </div>
                 </div>
                 <div className="flex items-center text-xs text-muted-foreground mb-2 space-x-2">
@@ -188,9 +157,12 @@ export default function Home() {
                   <span>•</span>
                   <span>{guide.readTime}</span>
                 </div>
-                <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">
+                <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight mb-3">
                   {guide.title}
                 </h3>
+                <span className="text-primary font-medium text-sm flex items-center">
+                  Read Article <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                </span>
               </Link>
             ))}
           </div>
@@ -198,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      {/* <section className="py-20 bg-primary text-primary-foreground">
         <div className="container px-4 md:px-8 mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Stay Ahead of the Curve</h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-10 text-lg">
@@ -218,7 +190,7 @@ export default function Home() {
             No spam. Unsubscribe anytime. View our <Link href="/privacy" className="underline hover:text-white">Privacy Policy</Link>.
           </p>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

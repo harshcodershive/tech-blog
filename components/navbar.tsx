@@ -11,7 +11,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Methodology", href: "/methodology" },
-    { name: "Reviews", href: "/reviews/top-ai-tools" },
+    { name: "Reviews", href: "/reviews" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
 ];
@@ -73,7 +73,9 @@ export function Navbar() {
 
                 {/* Call to Action */}
                 <div className="hidden md:flex">
-                    <Button>Get Standard Access</Button>
+                    <Link href="/reviews">
+                        <Button>Explore tools</Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu */}

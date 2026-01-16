@@ -1,127 +1,143 @@
+import { reviewsData } from "@/lib/reviews-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, X, Star, ExternalLink, Info } from "lucide-react";
+import { Check, X, Star, ExternalLink, ArrowLeft, Info, Zap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// Mock Data for demonstration
-const reviews: Record<string, any> = {
-    "jasper-ai": {
-        title: "Jasper AI",
-        tagline: "The Enterprise AI Copilot",
-        rating: 4.8,
-        pricing: "Starts at $39/mo",
-        summary: "Jasper is more than just a writing assistant; it's a comprehensive platform for enterprise content creation, offering brand voice consistency and collaboration tools that ChatGPT lacks.",
-        pros: ["Excellent brand voice features", "Deep integration with SEO tools", "Enterprise-grade security", "Huge library of templates"],
-        cons: ["More expensive than other options", "Steeper learning curve for advanced features"],
-        verdict: "Best for Marketing Teams"
-    },
-    "notion-ai": {
-        title: "Notion AI",
-        tagline: "Your Connected Workspace AI",
-        rating: 4.7,
-        pricing: "$10/mo per user",
-        summary: "Notion AI seamlessly integrates into your existing workspace, making it the most convenient option for teams already living in Notion. It excels at summarizing and expanding existing notes.",
-        pros: ["Incredible convenience", "Great price point", "Good at context-aware writing"],
-        cons: ["Not as powerful as standalone models", "Limited generation length"],
-        verdict: "Best for Productivity"
-    },
-    "midjourney": {
-        title: "Midjourney",
-        tagline: "The Gold Standard for AI Art",
-        rating: 4.9,
-        pricing: "Starts at $10/mo",
-        summary: "Midjourney continues to dominate the AI image generation space with superior aesthetic quality and realism, though its Discord-based interface remains a hurdle for some users.",
-        pros: ["Unmatched image quality", "Specific control parameters", "Active community"],
-        cons: ["Discord interface is clunky", "No free trial anymore"],
-        verdict: "Best for Designers"
-    }
-};
+export async function generateStaticParams() {
+    return reviewsData.map((review) => ({
+        slug: review.slug,
+    }));
+}
 
 export default async function ReviewPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const review = reviews[slug] || reviews["jasper-ai"]; // Fallback for demo purposes
+    const review = reviewsData.find((r) => r.slug === slug);
+
+    if (!review) {
+        notFound();
+    }
 
     return (
         <div className="container py-20 px-4 md:px-8 mx-auto">
-            {/* Hero Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-                <div className="lg:col-span-2">
-                    <Badge className="mb-4">Official Review</Badge>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">{review.title} Review: Is it Worth It in 2025?</h1>
-                    <p className="text-xl text-muted-foreground mb-6">{review.summary}</p>
+            {/* Back Link */}
+            <Link href="/reviews">
+                <Button variant="ghost" className="pl-0 hover:pl-2 transition-all mb-8 text-muted-foreground">
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to All Reviews
+                </Button>
+            </Link>
 
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
-                        <div className="flex items-center">
-                            <Info className="h-4 w-4 mr-1" /> Updated: Oct 2024
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                {/* Main Content */}
+                <div className="lg:col-span-2 space-y-8">
+                    <div>
+                        <div className="flex items-center gap-3 mb-4">
+                            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">Official Review</Badge>
+                            <Badge variant="outline">{review.category}</Badge>
                         </div>
-                        <div>•</div>
-                        <div>By Alex Johnson</div>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{review.title}</h1>
+                        <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                            {review.tagline}
+                        </p>
                     </div>
 
-                    <div className="prose prose-lg max-w-none text-muted-foreground">
-                        <p>
-                            In this in-depth review, we break down {review.title}'s features, pricing, and performance to help you decide if it's the right tool for your specific needs.
-                        </p>
-                        {/* Placeholder for long form content */}
-                        <div className="my-8 p-6 bg-muted/30 rounded-lg border">
-                            <h3 className="text-foreground font-bold text-xl mb-2">Our Verdict</h3>
-                            <p className="mb-4">{review.verdict}</p>
-                            <div className="flex items-center text-amber-500 font-bold text-2xl">
-                                <Star className="h-6 w-6 fill-current mr-2" /> {review.rating}/5.0
+                    <div className="prose prose-lg prose-gray max-w-none">
+                        <h2 className="text-2xl font-bold text-foreground">Overview</h2>
+                        <p>{review.summary}</p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+                            <Card className="bg-green-50/50 dark:bg-green-900/10 border-green-200 dark:border-green-900">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-lg flex items-center text-green-700 dark:text-green-400">
+                                        <Check className="h-5 w-5 mr-2" /> The Good
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2">
+                                        {review.pros.map((pro, i) => (
+                                            <li key={i} className="text-sm flex items-start">
+                                                <span className="mr-2 text-green-600">•</span> {pro}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                            <Card className="bg-red-50/50 dark:bg-red-900/10 border-red-200 dark:border-red-900">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-lg flex items-center text-red-700 dark:text-red-400">
+                                        <X className="h-5 w-5 mr-2" /> The Bad
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2">
+                                        {review.cons.map((con, i) => (
+                                            <li key={i} className="text-sm flex items-start">
+                                                <span className="mr-2 text-red-600">•</span> {con}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-foreground">Key Features</h2>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose px-0">
+                            {review.features.map((feature, i) => (
+                                <li key={i} className="flex items-center gap-3 p-3 bg-muted/40 rounded-lg border border-border/50">
+                                    <Zap className="h-4 w-4 text-primary" />
+                                    <span className="text-sm font-medium">{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12 not-prose">
+                            <h3 className="text-xl font-bold mb-4 flex items-center">
+                                <Star className="h-5 w-5 fill-primary text-primary mr-2" /> Our Verdict
+                            </h3>
+                            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                                {review.verdict}
+                            </p>
+                            <div className="flex items-center justify-between pt-6 border-t border-primary/10">
+                                <div className="flex flex-col">
+                                    <span className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Overall Rating</span>
+                                    <span className="text-3xl font-bold text-primary">{review.rating}<span className="text-lg text-muted-foreground font-normal">/5.0</span></span>
+                                </div>
+                                <Link href={review.officialLink} target="_blank">
+                                    <Button size="lg">Visit Website <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Sidebar Card */}
-                <div>
-                    <Card className="sticky top-24 border-primary/20 shadow-lg">
-                        <CardHeader className="bg-muted/30 pb-4">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <CardTitle className="text-2xl">{review.title}</CardTitle>
-                                    <p className="text-sm text-muted-foreground">{review.tagline}</p>
-                                </div>
-                                <div className="bg-primary text-primary-foreground font-bold px-2 py-1 rounded text-lg">
-                                    {review.rating}
-                                </div>
-                            </div>
-                        </CardHeader>
+                {/* Sidebar */}
+                <div className="space-y-8">
+                    <Card className="sticky top-24 border-border shadow-lg overflow-hidden">
+                        <div className="h-32 bg-gradient-to-br from-primary/20 via-primary/5 to-background flex items-center justify-center">
+                            <h2 className="text-3xl font-bold text-primary opacity-50">{review.title}</h2>
+                        </div>
                         <CardContent className="pt-6">
                             <div className="space-y-6">
-                                <div>
-                                    <h4 className="font-semibold mb-2 flex items-center text-green-600"><Check className="h-4 w-4 mr-1" /> Pros</h4>
-                                    <ul className="space-y-1 text-sm">
-                                        {review.pros.map((pro: string, i: number) => (
-                                            <li key={i} className="flex items-start text-muted-foreground">
-                                                <span className="mr-2">•</span>{pro}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                <div className="flex justify-between items-center border-b pb-4">
+                                    <span className="font-medium text-muted-foreground">Category</span>
+                                    <span className="font-bold">{review.category}</span>
                                 </div>
-                                <div>
-                                    <h4 className="font-semibold mb-2 flex items-center text-red-600"><X className="h-4 w-4 mr-1" /> Cons</h4>
-                                    <ul className="space-y-1 text-sm">
-                                        {review.cons.map((con: string, i: number) => (
-                                            <li key={i} className="flex items-start text-muted-foreground">
-                                                <span className="mr-2">•</span>{con}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                <div className="flex justify-between items-center border-b pb-4">
+                                    <span className="font-medium text-muted-foreground">Rating</span>
+                                    <div className="flex items-center font-bold text-amber-500">
+                                        <Star className="h-4 w-4 fill-current mr-1" /> {review.rating}
+                                    </div>
                                 </div>
 
-                                <div className="pt-4 border-t">
-                                    <p className="text-sm text-muted-foreground mb-1">Pricing</p>
-                                    <p className="font-bold text-lg">{review.pricing}</p>
-                                </div>
-
-                                <Button className="w-full h-12 text-lg" size="lg">
-                                    Visit Website <ExternalLink className="ml-2 h-4 w-4" />
-                                </Button>
+                                <Link href={review.officialLink} target="_blank" className="w-full block">
+                                    <Button className="w-full h-12 text-lg shadow-primary/20 shadow-lg" size="lg">
+                                        Visit Official Site <ExternalLink className="ml-2 h-4 w-4" />
+                                    </Button>
+                                </Link>
                                 <p className="text-xs text-center text-muted-foreground">
-                                    We may earn a commission if you click this link.
+                                    Transparency: We may earn a commission if you click this link.
                                 </p>
                             </div>
                         </CardContent>

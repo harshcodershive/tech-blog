@@ -1,8 +1,21 @@
 import Link from "next/link";
 import { Zap, Twitter, Linkedin, Github } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { reviewsData } from "@/lib/reviews-data";
 
 export function Footer() {
+    // Get unique categories and limit to 4
+    const categories = Array.from(new Set(reviewsData.map(tool => tool.category))).slice(0, 4);
+
+    // Create category links by finding the first tool for each category
+    const categoryLinks = categories.map(category => {
+        const tool = reviewsData.find(t => t.category === category);
+        return {
+            name: category,
+            slug: tool?.slug || '#'
+        };
+    });
+
     return (
         <footer className="bg-muted/30 border-t">
             <div className="container mx-auto px-4 md:px-8 py-12">
@@ -48,10 +61,13 @@ export function Footer() {
                     <div>
                         <h3 className="font-semibold mb-4">Explore</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="/reviews/productivity" className="text-muted-foreground hover:text-primary transition-colors">Productivity Tools</Link></li>
-                            <li><Link href="/reviews/marketing" className="text-muted-foreground hover:text-primary transition-colors">Marketing AI</Link></li>
-                            <li><Link href="/reviews/coding" className="text-muted-foreground hover:text-primary transition-colors">Coding Assistants</Link></li>
-                            <li><Link href="/reviews/design" className="text-muted-foreground hover:text-primary transition-colors">Design & Art</Link></li>
+                            {categoryLinks.map((category) => (
+                                <li key={category.name}>
+                                    <Link href={`/reviews/${category.slug}`} className="text-muted-foreground hover:text-primary transition-colors">
+                                        {category.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 

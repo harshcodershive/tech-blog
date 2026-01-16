@@ -1,0 +1,179 @@
+export interface Review {
+    slug: string;
+    title: string;
+    tagline: string;
+    rating: number;
+    category: string;
+    description: string;
+    verdict: string;
+    pros: string[];
+    cons: string[];
+    features: string[];
+    summary: string;
+    officialLink: string; // Added official link field
+}
+
+export const reviewsData: Review[] = [
+    {
+        slug: "jasper-ai",
+        title: "Jasper AI",
+        tagline: "The Enterprise AI Copilot for Marketing",
+        rating: 4.8,
+        category: "Marketing",
+        description: "Jasper is an advanced AI content platform built specifically for enterprise marketing teams, offering brand voice consistency and collaboration tools.",
+        summary: "Jasper stands out by offering a dedicated engine for marketing content. Unlike generic models, it understands brand voice, style guides, and marketing frameworks out of the box. It is designed for teams that need to produce high-volume, on-brand content across multiple channels.",
+        verdict: "Best for Marketing Teams requiring brand consistency.",
+        pros: [
+            "Excellent brand voice customization",
+            "Deep integration with SEO and surfing tools",
+            "Enterprise-grade security and admin controls",
+            "Huge library of marketing-specific templates"
+        ],
+        cons: [
+            "Steeper learning curve for advanced features",
+            "Can be overkill for individual freelancers"
+        ],
+        features: [
+            "Brand Voice Memory",
+            "Campaign workflows",
+            "AI Art Generator",
+            "Plagiarism checker integration"
+        ],
+        officialLink: "https://www.jasper.ai"
+    },
+    {
+        slug: "notion-ai",
+        title: "Notion AI",
+        tagline: "Your Connected Workspace Intelligent Assistant",
+        rating: 4.7,
+        category: "Productivity",
+        description: "Notion AI seamlessly integrates into your existing workspace, making it the most convenient option for teams already living in Notion.",
+        summary: "Notion AI isn't just a chatbot; it's a context-aware assistant that lives inside your notes and docs. It excels at summarizing meetings, extracting action items, and improving writing directly within your workflow without context switching.",
+        verdict: "Best for Productivity and Knowledge Management.",
+        pros: [
+            "Incredible convenience for Notion users",
+            "Context-aware writing and summarization",
+            "Private and secure within your workspace",
+            "Drag-and-drop text editing"
+        ],
+        cons: [
+            "Less powerful reasoning than standalone frontier models",
+            "Limited usage for code generation"
+        ],
+        features: [
+            "Q&A with your database",
+            "Auto-fill tables",
+            "Document translation",
+            "Tone and grammar correction"
+        ],
+        officialLink: "https://www.notion.so/product/ai"
+    },
+    {
+        slug: "midjourney",
+        title: "Midjourney",
+        tagline: "The Gold Standard for AI Art Generation",
+        rating: 4.9,
+        category: "Design",
+        description: "Midjourney continues to dominate the AI image generation space with superior aesthetic quality, lighting, and texture realism.",
+        summary: "For professional creatives, Midjourney remains unbeatable in terms of raw image quality. Its ability to interpret abstract concepts into stunning, high-fidelity visuals makes it the go-to tool for designers, artists, and advertisers looking for premium assets.",
+        verdict: "Best for Designers seeking high-fidelity visuals.",
+        pros: [
+            "Unmatched image quality and aesthetics",
+            "Precise control with parameters",
+            "Active and helpful community",
+            "Constant model updates and improvements"
+        ],
+        cons: [
+            "Interface is primarily via Discord",
+            "Steeper learning curve for prompting"
+        ],
+        features: [
+            "Image-to-Image generation",
+            "Zoom Out and Pan",
+            "Style Tuner",
+            "Niji Model for Anime styles"
+        ],
+        officialLink: "https://www.midjourney.com"
+    },
+    {
+        slug: "claude-3-5-sonnet",
+        title: "Claude 3.5 Sonnet",
+        tagline: "The Most Human-Like AI Assistant",
+        rating: 4.9,
+        category: "Chatbot",
+        description: "Anthropic's latest model sets a new standard for coding, reasoning, and nuanced writing, often outperforming competitors in complex tasks.",
+        summary: "Claude 3.5 Sonnet feels significantly more 'human' in its interactions. It excels at nuance, following complex multi-step instructions, and writing code. Its 'Artifacts' feature allows you to view code and documents side-by-side, creating a dynamic workspace.",
+        verdict: "Best for Coding and Complex Reasoning.",
+        pros: [
+            "Exceptional coding capabilities",
+            "Large context window",
+            "Artifacts UI for real-time preview",
+            "Natural / Human-like writing style"
+        ],
+        cons: [
+            "Fewer integrations than OpenAI",
+            "Cannot generate images directly"
+        ],
+        features: [
+            "Artifacts UI",
+            "Project Knowledge extraction",
+            "Vision capabilities",
+            "Safe and steerable responses"
+        ],
+        officialLink: "https://www.anthropic.com/claude"
+    },
+    {
+        slug: "chatgpt-plus",
+        title: "ChatGPT Plus",
+        tagline: "The Versatile All-Rounder",
+        rating: 4.8,
+        category: "Assistant",
+        description: "OpenAI's flagship product combining GPT-4o with DALL-E 3, Data Analysis, and Web Browsing for a complete AI suite.",
+        summary: "ChatGPT Plus acts as a swiss-army knife for digital work. Whether you need to analyze a spreadsheet, generate a logo, browse the web for citations, or write a report, it handles it all in a single interface with high competence.",
+        verdict: "Best General Purpose AI Assistant.",
+        pros: [
+            "Multimodal (Voice, Vision, Image, Text)",
+            "Custom GPTs store",
+            "Fast internet browsing",
+            "Advanced Data Analysis features"
+        ],
+        cons: [
+            "Can vary in response quality",
+            "Strict safety guardrails can be restrictive"
+        ],
+        features: [
+            "GPT-4o Model",
+            "DALL-E 3 Image Generation",
+            "Advanced Data Analysis",
+            "Voice Mode"
+        ],
+        officialLink: "https://chat.openai.com"
+    },
+    {
+        slug: "github-copilot",
+        title: "GitHub Copilot",
+        tagline: "The World's Most Widely Adopted AI Developer Tool",
+        rating: 4.7,
+        category: "Development",
+        description: "GitHub Copilot turns natural language prompts into coding suggestions across dozens of languages, directly in your IDE.",
+        summary: "For developers, Copilot is less like a tool and more like an extension of the mind. It predicts your next move, helps debug complex errors, and can scaffold entire functions. Its deep integration into VS Code makes it indispensable for modern software engineering.",
+        verdict: "Best for Software Developers.",
+        pros: [
+            "Seamless IDE integration",
+            "Context-aware code completion",
+            "Chat interface for debugging",
+            "Enterprise security compliance"
+        ],
+        cons: [
+            "Can occasionally suggest legacy code",
+            "Requires code review for security"
+        ],
+        features: [
+            "Autocomplete",
+            "Copilot Chat",
+            "CLI integration",
+            "Pull Request descriptions"
+        ],
+        officialLink: "https://github.com/features/copilot"
+    }
+];
