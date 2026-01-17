@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Zap, Twitter, Linkedin, Github } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { reviewsData } from "@/lib/reviews-data";
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { CiLinkedin } from "react-icons/ci";
 
 export function Footer() {
     // Get unique categories and limit to 4
@@ -34,14 +37,14 @@ export function Footer() {
                             Your trusted source for AI tools reviews, automation guides, and the latest tech insights. Empowering your workflow with intelligence.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Twitter className="h-5 w-5" />
+                            <Link href="https://www.instagram.com/aboutyourai/" className="text-muted-foreground hover:text-primary transition-colors">
+                                <FaInstagram className="h-5 w-5" />
                             </Link>
                             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Linkedin className="h-5 w-5" />
+                                <FaXTwitter className="h-5 w-5" />
                             </Link>
                             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Github className="h-5 w-5" />
+                                <CiLinkedin className="h-5 w-5" />
                             </Link>
                         </div>
                     </div>
