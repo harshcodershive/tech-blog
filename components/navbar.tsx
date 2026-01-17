@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -24,8 +25,14 @@ export function Navbar() {
             <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="p-1.5 bg-primary rounded-lg">
-                        <Zap className="h-5 w-5 text-primary-foreground fill-current" />
+                    <div className="p-1.5  rounded-lg">
+                        <Image
+                            src="/logo.jpg"
+                            alt="AboutYourAI Logo"
+                            width={32}
+                            height={32}
+                            className="h-8 w-8 object-contain"
+                        />
                     </div>
                     <span className="font-bold text-xl tracking-tight text-foreground">
                         About<span className="text-primary">YourAI</span>

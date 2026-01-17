@@ -40,11 +40,8 @@ export function Footer() {
                             <Link href="https://www.instagram.com/aboutyourai/" className="text-muted-foreground hover:text-primary transition-colors">
                                 <FaInstagram className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Link href="https://www.x.com/aboutyourai" className="text-muted-foreground hover:text-primary transition-colors">
                                 <FaXTwitter className="h-5 w-5" />
-                            </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <CiLinkedin className="h-5 w-5" />
                             </Link>
                         </div>
                     </div>
