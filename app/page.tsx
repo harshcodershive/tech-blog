@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -146,11 +147,12 @@ export default function Home() {
             {recentGuides.map((guide, index) => (
               <Link href={`/blog/${guide.slug}`} key={index} className="group cursor-pointer">
                 <div className="aspect-video bg-muted rounded-xl mb-4 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                  {/* Placeholder for image */}
-                  <div className="flex items-center justify-center h-full text-muted-foreground/30 font-bold text-xl">
-                    {guide.category}
-                  </div>
+                  <Image
+                    src={guide.image}
+                    alt={guide.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="flex items-center text-xs text-muted-foreground mb-2 space-x-2">
                   <span>{guide.date}</span>

@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  image: string; // Path to image in public folder
   content: string; // HTML or Markdown content
 }
 
@@ -16,6 +17,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 12, 2024",
     category: "Automation",
     readTime: "8 min",
+    image: "/email-marketing-automation.jpg",
     content: `
       <p class="lead">Email marketing remains one of the highest-ROI digital channels—but manually managing campaigns, personalization, and follow-ups can be time-consuming. This is where Artificial Intelligence (AI) transforms the game.</p>
       
@@ -104,6 +106,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 10, 2024",
     category: "Development",
     readTime: "12 min",
+    image: "/top-ai-tools-developers.webp",
     content: `
       <p class="lead">AI has become a core part of modern software development. In 2025, developers who leverage AI tools are writing better code, faster, and with fewer errors.</p>
       
@@ -212,6 +215,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 08, 2024",
     category: "Guides",
     readTime: "15 min",
+    image: "/prompt-engineering-guide.jpg",
     content: `
       <p class="lead">Prompt engineering is the art and science of communicating effectively with AI models. The quality of your prompt directly determines the quality of the output.</p>
       

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
@@ -17,11 +18,12 @@ export default function BlogIndexPage() {
                     <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
                         <Card className="h-full border-border/50 hover:shadow-lg transition-all duration-300 flex flex-col">
                             <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl shrink-0">
-                                <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                                {/* Placeholder for images based on category */}
-                                <div className="flex items-center justify-center h-full text-muted-foreground/30 font-bold text-2xl">
-                                    {post.category}
-                                </div>
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
                             </div>
                             <CardHeader className="pb-3">
                                 <div className="flex justify-between items-center mb-2">

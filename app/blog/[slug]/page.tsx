@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 // Generate static params for all known posts
@@ -22,13 +23,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
     return (
         <article className="container py-20 px-4 md:px-8 mx-auto">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
                 {/* Back Link */}
                 <Link href="/blog">
                     <Button variant="ghost" className="pl-0 hover:pl-2 transition-all mb-8 text-muted-foreground">
                         <ArrowLeft className="mr-2 h-4 w-4" /> Back to Guides
                     </Button>
                 </Link>
+
+                {/* Featured Image */}
+                <div className="aspect-video bg-muted relative overflow-hidden rounded-2xl mb-8">
+                    <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
 
                 {/* Helper Meta */}
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
@@ -44,21 +56,31 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                 {/* Content Body */}
                 <div
-                    className="prose prose-lg prose-gray max-w-none 
-          prose-headings:font-bold prose-headings:tracking-tight 
-          prose-p:leading-relaxed prose-p:text-muted-foreground
-          prose-strong:text-foreground prose-li:text-muted-foreground"
+                    className="blog-content prose prose-lg max-w-none
+                        prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground
+                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:pb-2 
+                        prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                        prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:mb-6
+                        prose-strong:text-foreground prose-strong:font-semibold
+                        prose-ul:my-6 prose-ul:space-y-2
+                        prose-li:text-muted-foreground prose-li:leading-relaxed
+                        prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+                        prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                        [&_.lead]:text-xl [&_.lead]:font-medium [&_.lead]:text-foreground [&_.lead]:mb-8"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 
-                {/* Share / Footer */}
-                <div className="mt-12 pt-8 border-t flex justify-between items-center">
-                    <p className="text-muted-foreground font-medium">Share this article</p>
-                    <div className="flex gap-2">
-                        <Button variant="outline" size="icon" className="rounded-full">
-                            <Share2 className="h-4 w-4" />
+                {/* Related Articles CTA */}
+                <div className="mt-12 bg-muted/30 rounded-2xl p-8 text-center">
+                    <h3 className="text-2xl font-bold mb-4">Explore More Insights</h3>
+                    <p className="text-muted-foreground mb-6">
+                        Discover more guides, tutorials, and AI tool reviews.
+                    </p>
+                    <Link href="/blog">
+                        <Button size="lg">
+                            View All Articles
                         </Button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </article>
