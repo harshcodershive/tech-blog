@@ -1,9 +1,9 @@
 name: Auto Generate AI Tool Review
 
-on:
-  schedule:
-    - cron: "0 5 * * *" # every day at 5 AM UTC
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: "0 5 * * *" # every day at 5 AM UTC
+#   workflow_dispatch:
 
 jobs:
   generate:
