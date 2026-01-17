@@ -33,7 +33,7 @@ Rules:
 - slug must be lowercase and hyphen-separated
 - pros, cons, features must contain at least 3 items
 
-Tool Name: Groq AI
+Tool Name: Grok AI
 Category: AI Inference Engine
 Official Website: https://grok.com/
 `;
