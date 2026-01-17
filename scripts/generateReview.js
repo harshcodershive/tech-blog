@@ -33,9 +33,9 @@ Rules:
 - slug must be lowercase and hyphen-separated
 - pros, cons, features must contain at least 3 items
 
-Tool Name: Grok AI
-Category: AI Inference Engine
-Official Website: https://grok.com/
+Tool Name: Sudowrite
+Category: AI Writing Assistant
+Official Website: https://sudowrite.com/
 `;
 
     const response = await ai.models.generateContent({
