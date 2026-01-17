@@ -33,9 +33,9 @@ Rules:
 - slug must be lowercase and hyphen-separated
 - pros, cons, features must contain at least 3 items
 
-Tool Name: Perplexity AI
-Category: Chat
-Official Website: https://www.perplexity.ai/
+Tool Name: Groq AI
+Category: AI Inference Engine
+Official Website: https://grok.com/
 `;
 
     const response = await ai.models.generateContent({
