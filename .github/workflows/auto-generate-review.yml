@@ -1,0 +1,40 @@
+name: Auto Generate AI Tool Review
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # every day at 5 AM UTC
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate review with Gemini
+        run: node scripts/generateReview.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Integrate review into reviews-data.ts
+        run: node scripts/integrateReview.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "AI Review Bot"
+          git config user.email "bot@aboutyourai.com"
+
+          git add data/tools lib/reviews-data.ts
+
+          git commit -m "Auto: add AI tool review" || exit 0
+          git push

@@ -1,0 +1,29 @@
+{
+  "slug": "jasper-ai",
+  "title": "Jasper AI",
+  "tagline": "The Enterprise AI platform for marketing teams.",
+  "rating": 4.8,
+  "category": "Marketing",
+  "description": "Jasper AI is a comprehensive artificial intelligence content platform designed to help marketing teams scale their content production. It leverages advanced language models to generate high-quality copy for blogs, social media, advertisements, and emails while adhering to specific brand voices and style guides.",
+  "summary": "An industry-leading AI writing assistant and content generation platform tailored for professional marketing teams and enterprises.",
+  "verdict": "Jasper AI is a top-tier choice for businesses looking to automate content workflows with brand consistency, though its premium pricing is geared more toward teams than solo hobbyists.",
+  "pros": [
+    "Sophisticated Brand Voice memory and enforcement",
+    "Extensive library of over 50 marketing templates",
+    "Seamless integration with Surfer SEO for content optimization",
+    "Powerful collaboration tools for large marketing departments"
+  ],
+  "cons": [
+    "Premium pricing tiers are higher than basic AI assistants",
+    "Occasional factual inaccuracies require human proofreading",
+    "Advanced features have a moderate learning curve"
+  ],
+  "features": [
+    "Custom Brand Voice and Style Guide training",
+    "Jasper Art for AI-generated marketing imagery",
+    "Multi-language support for over 30 languages",
+    "Browser extension for cross-platform usage",
+    "Campaign-level content generation workflows"
+  ],
+  "officialLink": "https://www.jasper.ai"
+}
