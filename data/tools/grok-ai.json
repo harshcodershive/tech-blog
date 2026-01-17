@@ -1,0 +1,28 @@
+{
+  "slug": "grok-ai",
+  "title": "Grok AI",
+  "tagline": "Real-time AI with a rebellious streak and deep knowledge of current events.",
+  "rating": 4.5,
+  "category": "AI Inference Engine",
+  "description": "Grok AI is a large language model developed by xAI, Elon Musk's artificial intelligence company. It is uniquely positioned to access real-time information from the X social media platform, allowing it to provide up-to-the-minute insights on breaking news and global trends. Grok is designed to be conversational, witty, and slightly provocative, aiming to provide a more human-like interaction than its more sanitized competitors.",
+  "summary": "A powerful AI model integrated with X, offering real-time data access and a distinct, unfiltered personality.",
+  "verdict": "Grok is a top-tier contender in the AI space, especially for users who prioritize real-time social context and a less restrictive communication style.",
+  "pros": [
+    "Access to live data streams from X",
+    "Humorous and engaging conversational style",
+    "High performance in reasoning and coding tasks",
+    "Lower censorship compared to other mainstream AIs"
+  ],
+  "cons": [
+    "Full access restricted to paid X subscribers",
+    "Data quality depends on social media accuracy",
+    "Newer ecosystem with fewer integrations than rivals"
+  ],
+  "features": [
+    "Real-time information retrieval",
+    "Python code execution and analysis",
+    "Integration with X Premium services",
+    "Multi-modal image and text processing"
+  ],
+  "officialLink": "https://grok.com/"
+}
