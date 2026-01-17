@@ -15,10 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "About Your AI | Find Reviews of AI Tools",
-//   description: "Professional reviews, guides, and insights on the latest AI tools and automation strategies.",
-// };
 
 export const metadata = {
   title: "About Your AI | Find Reviews of AI Tools",
