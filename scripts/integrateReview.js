@@ -1,97 +1,98 @@
 import fs from "fs";
 import path from "path";
 
-/**
- * ✅ PATHS (UPDATED FOR YOUR STRUCTURE)
- */
 const GENERATED_DIR = path.join(process.cwd(), "data", "tools");
-const REVIEWS_TS_PATH = path.join(
-    process.cwd(),
-    "lib",
-    "reviews-data.ts"
-);
+const REVIEWS_TS_PATH = path.join(process.cwd(), "lib", "reviews-data.ts");
 
-/**
- * Read all generated JSON files
- */
+const START_MARKER = "// 🔽 AUTO-INSERT-START";
+const END_MARKER = "// 🔼 AUTO-INSERT-END";
+
+const INDENT = "    "; // 4 spaces
+
+function formatArray(arr, indentLevel = 2) {
+    const indent = INDENT.repeat(indentLevel);
+    const innerIndent = INDENT.repeat(indentLevel + 1);
+
+    return `[\n${arr
+        .map((item) => `${innerIndent}"${item}"`)
+        .join(",\n")}\n${indent}]`;
+}
+
+function formatReview(review) {
+    const i = INDENT.repeat(2);
+    const ii = INDENT.repeat(3);
+
+    return `
+${i}{
+${ii}slug: "${review.slug}",
+${ii}title: "${review.title}",
+${ii}tagline: "${review.tagline}",
+${ii}rating: ${review.rating},
+${ii}category: "${review.category}",
+${ii}description: ${JSON.stringify(review.description)},
+${ii}summary: ${JSON.stringify(review.summary)},
+${ii}verdict: "${review.verdict}",
+${ii}pros: ${formatArray(review.pros)},
+${ii}cons: ${formatArray(review.cons)},
+${ii}features: ${formatArray(review.features)},
+${ii}officialLink: "${review.officialLink}"
+${i}},
+`;
+}
+
 if (!fs.existsSync(GENERATED_DIR)) {
     console.log("ℹ️ data/tools directory does not exist.");
     process.exit(0);
 }
 
-const generatedFiles = fs
-    .readdirSync(GENERATED_DIR)
-    .filter((file) => file.endsWith(".json"));
-
-if (generatedFiles.length === 0) {
-    console.log("ℹ️ No generated reviews found in data/tools.");
-    process.exit(0);
-}
-
-/**
- * Load existing reviews-data.ts
- */
 if (!fs.existsSync(REVIEWS_TS_PATH)) {
     console.error("❌ lib/reviews-data.ts not found");
     process.exit(1);
 }
 
+const generatedFiles = fs
+    .readdirSync(GENERATED_DIR)
+    .filter((f) => f.endsWith(".json"));
+
+if (generatedFiles.length === 0) {
+    console.log("ℹ️ No generated reviews found.");
+    process.exit(0);
+}
+
 let reviewsTs = fs.readFileSync(REVIEWS_TS_PATH, "utf-8");
 
-/**
- * Marker validation
- */
-const START_MARKER = "// 🔽 AUTO-INSERT-START";
-const END_MARKER = "// 🔼 AUTO-INSERT-END";
+const startIndex = reviewsTs.indexOf(START_MARKER);
+const endIndex = reviewsTs.indexOf(END_MARKER);
 
-if (!reviewsTs.includes(START_MARKER) || !reviewsTs.includes(END_MARKER)) {
-    console.error("❌ AUTO-INSERT markers not found in lib/reviews-data.ts");
+if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
+    console.error("❌ AUTO-INSERT markers not found or invalid");
     process.exit(1);
 }
 
-/**
- * Insert each review safely
- */
+const before = reviewsTs.slice(0, startIndex + START_MARKER.length);
+const middle = reviewsTs.slice(
+    startIndex + START_MARKER.length,
+    endIndex
+);
+const after = reviewsTs.slice(endIndex);
+
+let updatedMiddle = middle;
+
 for (const file of generatedFiles) {
     const reviewPath = path.join(GENERATED_DIR, file);
     const review = JSON.parse(fs.readFileSync(reviewPath, "utf-8"));
 
-    // Duplicate protection
     if (reviewsTs.includes(`slug: "${review.slug}"`)) {
         console.log(`⚠️ Review already exists: ${review.slug}`);
         continue;
     }
 
-    const reviewAsTs = `
-  {
-    slug: "${review.slug}",
-    title: "${review.title}",
-    tagline: "${review.tagline}",
-    rating: ${review.rating},
-    category: "${review.category}",
-    description: ${JSON.stringify(review.description)},
-    summary: ${JSON.stringify(review.summary)},
-    verdict: "${review.verdict}",
-    pros: ${JSON.stringify(review.pros, null, 4)},
-    cons: ${JSON.stringify(review.cons, null, 4)},
-    features: ${JSON.stringify(review.features, null, 4)},
-    officialLink: "${review.officialLink}"
-  },
-`;
-
-    reviewsTs = reviewsTs.replace(
-        new RegExp(`${START_MARKER}[\\s\\S]*?${END_MARKER}`, "m"),
-        `${START_MARKER}
-${reviewAsTs}
-  ${END_MARKER}`
-    );
-
+    updatedMiddle += formatReview(review);
     console.log(`✅ Integrated: ${review.slug}`);
 }
 
-/**
- * Write back updated reviews-data.ts
- */
-fs.writeFileSync(REVIEWS_TS_PATH, reviewsTs, "utf-8");
+const finalContent = `${before}${updatedMiddle}\n${after}`;
 
-console.log("🎉 lib/reviews-data.ts updated successfully");
+fs.writeFileSync(REVIEWS_TS_PATH, finalContent, "utf-8");
+
+console.log("🎉 lib/reviews-data.ts updated with proper formatting");

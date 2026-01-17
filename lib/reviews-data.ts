@@ -18,34 +18,63 @@ export const reviewsData: Review[] = [
 
     // 🔽 AUTO-INSERT-START
 
-  {
-    slug: "perplexity-ai",
-    title: "Perplexity AI",
-    tagline: "The world's first conversational search engine",
-    rating: 4.8,
-    category: "Chat",
-    description: "Perplexity AI is an AI-powered search engine that uses large language models to provide accurate and comprehensive answers to user queries in real-time. By browsing the live internet, it delivers cited information, ensuring transparency and reliability for research, coding, and general knowledge tasks.",
-    summary: "A revolutionary search tool that combines the conversational power of AI with real-time web access to provide cited, verifiable answers.",
-    verdict: "Perplexity AI is a top-tier choice for researchers and power users who need factual, up-to-date information without the clutter of traditional search engine results.",
-    pros: [
-    "Provides real-time citations for every answer",
-    "Offers access to multiple LLMs including Claude and GPT-4",
-    "Minimalist and ad-free user interface"
-],
-    cons: [
-    "The Pro version is required for the most advanced models",
-    "May occasionally struggle with highly complex mathematical proofs",
-    "Sourcing can sometimes prioritize popular sites over niche expert content"
-],
-    features: [
-    "Pro Search for deep, multi-step research queries",
-    "File upload for document analysis and summarization",
-    "Discover feed for trending topics and AI-curated news"
-],
-    officialLink: "https://www.perplexity.ai/"
-  },
+    {
+        slug: "perplexity-ai",
+        title: "Perplexity AI",
+        tagline: "The world's first conversational search engine",
+        rating: 4.8,
+        category: "Chat",
+        description: "Perplexity AI is an AI-powered search engine that uses large language models to provide accurate and comprehensive answers to user queries in real-time. By browsing the live internet, it delivers cited information, ensuring transparency and reliability for research, coding, and general knowledge tasks.",
+        summary: "A revolutionary search tool that combines the conversational power of AI with real-time web access to provide cited, verifiable answers.",
+        verdict: "Perplexity AI is a top-tier choice for researchers and power users who need factual, up-to-date information without the clutter of traditional search engine results.",
+        pros: [
+            "Provides real-time citations for every answer",
+            "Offers access to multiple LLMs including Claude and GPT-4",
+            "Minimalist and ad-free user interface"
+        ],
+        cons: [
+            "The Pro version is required for the most advanced models",
+            "May occasionally struggle with highly complex mathematical proofs",
+            "Sourcing can sometimes prioritize popular sites over niche expert content"
+        ],
+        features: [
+            "Pro Search for deep, multi-step research queries",
+            "File upload for document analysis and summarization",
+            "Discover feed for trending topics and AI-curated news"
+        ],
+        officialLink: "https://www.perplexity.ai/"
+    },
 
-  // 🔼 AUTO-INSERT-END
+
+    {
+        slug: "grok-ai",
+        title: "Grok AI",
+        tagline: "Real-time conversational AI with a rebellious streak and deep knowledge integration.",
+        rating: 4.5,
+        category: "AI Inference Engine",
+        description: "Grok AI is an advanced large language model developed by xAI, designed to provide real-time information and conversational responses with a unique, witty personality. Integrated deeply with the X platform, it leverages live data streams to answer complex questions about current events that other models might find challenging due to training data cutoffs.",
+        summary: "A high-performance AI assistant built for real-time information retrieval and engaging, unfiltered conversation.",
+        verdict: "Grok is a powerful alternative to mainstream LLMs, particularly for users seeking real-time data from social media and a more informal, direct communication style.",
+        pros: [
+            "Real-time access to live data from the X platform",
+            "Unique and witty conversational personality",
+            "High-speed inference and low latency responses"
+        ],
+        cons: [
+            "Primarily limited to X Premium subscribers",
+            "Tone may be too informal for certain professional settings",
+            "Relatively new ecosystem compared to competitors"
+        ],
+        features: [
+            "Real-time search and information retrieval",
+            "Multiple personality modes including Fun Mode",
+            "Advanced logical reasoning capabilities",
+            "Integration with the xAI technology stack"
+        ],
+        officialLink: "https://grok.com/"
+    },
+
+    // 🔼 AUTO-INSERT-END
 
 
     {
