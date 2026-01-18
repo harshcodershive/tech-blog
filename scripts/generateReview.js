@@ -6,8 +6,38 @@ const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
 })
 
+const TOOLS_FILE = path.join(process.cwd(), "data/tools-registry.json");
+const OUTPUT_DIR = path.join(process.cwd(), "data/tools");
+
+function getNextTool() {
+    const tools = JSON.parse(fs.readFileSync(TOOLS_FILE, "utf-8"));
+
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    }
+
+    const existingSlugs = new Set(
+        fs.readdirSync(OUTPUT_DIR).map(f => f.replace(".json", ""))
+    );
+
+    return tools.find(tool => {
+        const slug = tool.name.toLowerCase().replace(/\s+/g, "-");
+        return !existingSlugs.has(slug);
+    });
+}
+
 
 async function generateReview() {
+
+    const tool = getNextTool();
+
+    if (!tool) {
+        console.log("✅ All tools already reviewed.");
+        return;
+    }
+
+
+
     const prompt = `
 Return ONLY valid JSON.
 No markdown. No explanations.
@@ -33,9 +63,9 @@ Rules:
 - slug must be lowercase and hyphen-separated
 - pros, cons, features must contain at least 3 items
 
-Tool Name: Sudowrite
-Category: AI Writing Assistant
-Official Website: https://sudowrite.com/
+Tool Name: ${tool.name}
+Category: ${tool.category}
+Official Website: ${tool.officialLink}
 `;
 
     const response = await ai.models.generateContent({

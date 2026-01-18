@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Pictory",
+        "category": "AI Video Generator",
+        "officialLink": "https://pictory.ai/"
+    },
+    {
+        "name": "Runway ML",
+        "category": "AI Video Editing",
+        "officialLink": "https://runwayml.com/"
+    },
+    {
+        "name": "Cleanup Pictures",
+        "category": "AI Image Editing",
+        "officialLink": "https://cleanup.pictures/"
+    }
+]
