@@ -2,7 +2,7 @@ name: Auto Generate AI Tool Review
 
 on:
   schedule:
-    - cron: "0 5 * * *" # every day at 5 AM UTC
+    - cron: "30 20 * * *" # every day at 5 AM UTC
   workflow_dispatch:
 
 permissions:
