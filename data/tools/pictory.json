@@ -1,0 +1,30 @@
+{
+  "slug": "pictory",
+  "title": "Pictory",
+  "tagline": "Transform long-form content into short, shareable branded videos automatically",
+  "rating": 4.7,
+  "category": "AI Video Generator",
+  "description": "Pictory is an advanced AI-driven video creation platform that enables users to convert scripts, blog posts, and long-form recordings into professional-quality videos. Using powerful machine learning algorithms, it automatically identifies key highlights, adds relevant stock footage, generates captions, and applies background music, making it an essential tool for marketers and content creators.",
+  "summary": "Pictory is a cloud-based video production tool that uses artificial intelligence to simplify the process of creating engaging video content from text and long-form video files.",
+  "verdict": "Pictory is a premier choice for businesses and social media managers who need to scale video production quickly without the steep learning curve of traditional editing software.",
+  "pros": [
+    "Intuitive user interface that requires no technical expertise",
+    "Highly accurate automatic transcription and captioning",
+    "Massive library of royalty-free stock images and video clips",
+    "Efficiently turns blog posts into video content for social media"
+  ],
+  "cons": [
+    "AI voiceovers can occasionally sound synthetic",
+    "Limited customization options for advanced video editors",
+    "Rendering times can be slow for very long projects"
+  ],
+  "features": [
+    "Script-to-Video generation",
+    "Article-to-Video automation",
+    "Edit videos using text commands",
+    "Automatic video summarization",
+    "Automated captioning and subtitles",
+    "Branded intro and outro templates"
+  ],
+  "officialLink": "https://pictory.ai/"
+}
