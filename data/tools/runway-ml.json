@@ -1,0 +1,29 @@
+{
+  "slug": "runway-ml",
+  "title": "Runway ML",
+  "tagline": "Advancing creativity with artificial intelligence",
+  "rating": 4.8,
+  "category": "AI Video Editing",
+  "description": "Runway ML is a professional-grade creative toolkit that leverages machine learning to streamline video editing and content creation. It offers cutting-edge generative tools like Gen-1, Gen-2, and Gen-3 Alpha for high-fidelity text-to-video and image-to-video synthesis, alongside traditional AI-assisted editing tools.",
+  "summary": "A powerful, web-based platform that brings state-of-the-art AI generation and professional video editing tools to filmmakers and content creators.",
+  "verdict": "Runway ML is the industry leader in generative video AI, offering an unparalleled suite of tools that significantly reduce production time for high-quality visual content.",
+  "pros": [
+    "Industry-leading generative video models",
+    "Extensive suite of 'Magic AI' tools like Inpainting and Green Screen",
+    "Highly intuitive web-based user interface",
+    "Rapidly evolving feature set with frequent updates"
+  ],
+  "cons": [
+    "High credit consumption for top-tier video generation",
+    "Steep learning curve for mastering advanced motion control",
+    "Occasional visual artifacts in complex AI-generated scenes"
+  ],
+  "features": [
+    "Text-to-Video and Image-to-Video generation",
+    "AI Magic Tools for rotoscoping and background removal",
+    "Motion Brush for precise animation control",
+    "Cloud-based collaborative video editing",
+    "Custom AI model training for specific visual styles"
+  ],
+  "officialLink": "https://runwayml.com/"
+}
