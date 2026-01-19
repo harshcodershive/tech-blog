@@ -1,0 +1,29 @@
+{
+  "slug": "cleanup-pictures",
+  "title": "Cleanup Pictures",
+  "tagline": "Remove any unwanted object, defect, people, or text from your pictures in seconds",
+  "rating": 4.7,
+  "category": "AI Image Editing",
+  "description": "Cleanup Pictures is an advanced AI-powered retouching tool designed to help users remove unwanted objects, people, text, and defects from any image. Utilizing cutting-edge inpainting technology, it intelligently fills the erased area to match the surrounding environment seamlessly. It is widely used by real estate agents, e-commerce professionals, and casual users to clean up photos quickly without needing complex software like Photoshop.",
+  "summary": "A powerful and simple AI-driven tool for removing distractions and unwanted elements from images with professional-grade results.",
+  "verdict": "Cleanup Pictures is an essential tool for anyone needing quick photo retouching. Its simplicity and the quality of its AI-driven fills make it a top choice for both web and mobile image editing.",
+  "pros": [
+    "Incredible ease of use with a simple brush interface",
+    "Fast and efficient AI processing",
+    "Works directly in the browser without installation",
+    "Effective results even on complex textures"
+  ],
+  "cons": [
+    "Free version limits export resolution to 720p",
+    "Subscription required for high-definition downloads",
+    "Occasionally requires multiple passes for very large objects"
+  ],
+  "features": [
+    "AI-powered object removal",
+    "Text and watermark eraser",
+    "Blemish and wrinkle retouching",
+    "API integration for business workflows",
+    "High-resolution export available for Pro users"
+  ],
+  "officialLink": "https://cleanup.pictures/"
+}
