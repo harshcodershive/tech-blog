@@ -1,3 +1,10 @@
+export interface ReviewResource {
+    type: 'article' | 'video' | 'comparison';
+    title: string;
+    url: string;
+    description?: string;
+}
+
 export interface Review {
     slug: string;
     title: string;
@@ -10,7 +17,8 @@ export interface Review {
     cons: string[];
     features: string[];
     summary: string;
-    officialLink: string; // Added official link field
+    officialLink: string;
+    resources?: ReviewResource[]; // Optional additional resources
 }
 
 export const reviewsData: Review[] = [
@@ -46,7 +54,27 @@ export const reviewsData: Review[] = [
             "Readability scoring and content analysis",
             "Bulk scanning for large content audits"
         ],
-        officialLink: "https://chromewebstore.google.com/detail/ai-detector-and-human-wri/kdngfaamkbbkdbemejnlkmjfpmndjdmb?pli=1"
+        officialLink: "https://chromewebstore.google.com/detail/ai-detector-and-human-wri/kdngfaamkbbkdbemejnlkmjfpmndjdmb?pli=1",
+        resources: [
+            {
+                type: 'video',
+                title: 'Chrome Extension Tutorial',
+                url: 'https://youtu.be/V9bk4j2igys',
+                description: 'Watch a step-by-step guide on how to use the AI Detector Chrome extension'
+            },
+            {
+                type: 'article',
+                title: 'Updated Chrome Extension Features',
+                url: 'https://originality.ai/blog/originality-updated-ai-chrome-extension',
+                description: 'Learn about the latest updates and features of the Chrome extension'
+            },
+            {
+                type: 'comparison',
+                title: 'Best AI Detector Chrome Extensions',
+                url: 'https://originality.ai/blog/best-ai-detector-chrome-extensions',
+                description: 'See how Originality.ai compares to other AI detector extensions'
+            }
+        ]
     },
 
     {

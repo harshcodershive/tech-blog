@@ -2,7 +2,7 @@ import { reviewsData } from "@/lib/reviews-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, X, Star, ExternalLink, ArrowLeft, Info, Zap } from "lucide-react";
+import { Check, X, Star, ExternalLink, ArrowLeft, Zap, PlayCircle, FileText, BarChart3, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -91,6 +91,53 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
                                 </li>
                             ))}
                         </ul>
+
+                        {/* Resources Section - Only shown if resources exist */}
+                        {review.resources && review.resources.length > 0 && (
+                            <div className="mt-12 not-prose">
+                                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+                                    <BookOpen className="h-6 w-6 mr-2 text-primary" /> Learn More
+                                </h2>
+                                <div className="grid grid-cols-1 gap-4">
+                                    {review.resources.map((resource, i) => (
+                                        <Link
+                                            key={i}
+                                            href={resource.url}
+                                            target="_blank"
+                                            className="group flex items-start gap-4 p-4 bg-muted/30 hover:bg-muted/50 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-200"
+                                        >
+                                            <div className={`flex-shrink-0 h-10 w-10 rounded-lg flex items-center justify-center ${
+                                                resource.type === 'video'
+                                                    ? 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400'
+                                                    : resource.type === 'comparison'
+                                                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                                                    : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
+                                            }`}>
+                                                {resource.type === 'video' && <PlayCircle className="h-5 w-5" />}
+                                                {resource.type === 'article' && <FileText className="h-5 w-5" />}
+                                                {resource.type === 'comparison' && <BarChart3 className="h-5 w-5" />}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex items-center gap-2">
+                                                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                                                        {resource.title}
+                                                    </h4>
+                                                    <ExternalLink className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                </div>
+                                                {resource.description && (
+                                                    <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                                                        {resource.description}
+                                                    </p>
+                                                )}
+                                                <span className="text-xs text-muted-foreground/70 mt-2 inline-block capitalize">
+                                                    {resource.type === 'video' ? 'Video Tutorial' : resource.type === 'comparison' ? 'Comparison Guide' : 'Blog Article'}
+                                                </span>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12 not-prose">
                             <h3 className="text-xl font-bold mb-4 flex items-center">
