@@ -144,3 +144,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom styles for detailed review content */
+.detailed-review-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.detailed-review-content h3:first-child {
+  margin-top: 0;
+}
+
+.detailed-review-content p {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.detailed-review-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.detailed-review-content li {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.detailed-review-content strong {
+  color: var(--foreground);
+  font-weight: 600;
+}

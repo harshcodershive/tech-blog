@@ -2,7 +2,7 @@ import { reviewsData } from "@/lib/reviews-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, X, Star, ExternalLink, ArrowLeft, Zap, PlayCircle, FileText, BarChart3, BookOpen } from "lucide-react";
+import { Check, X, Star, ExternalLink, ArrowLeft, Zap, PlayCircle, FileText, BarChart3, BookOpen, DollarSign } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -92,6 +92,17 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
                             ))}
                         </ul>
 
+                        {/* Detailed Review Section - Only shown if detailedReview exists */}
+                        {review.detailedReview && (
+                            <div className="mt-12">
+                                <h2 className="text-2xl font-bold text-foreground mb-6">In-Depth Review</h2>
+                                <div
+                                    className="detailed-review-content"
+                                    dangerouslySetInnerHTML={{ __html: review.detailedReview }}
+                                />
+                            </div>
+                        )}
+
                         {/* Resources Section - Only shown if resources exist */}
                         {review.resources && review.resources.length > 0 && (
                             <div className="mt-12 not-prose">
@@ -177,6 +188,29 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
                                         <Star className="h-4 w-4 fill-current mr-1" /> {review.rating}
                                     </div>
                                 </div>
+
+                                {/* Pricing - Only shown if pricing exists */}
+                                {review.pricing && (
+                                    <div className="border-b pb-4">
+                                        <div className="flex justify-between items-start">
+                                            <span className="font-medium text-muted-foreground">Pricing</span>
+                                            <div className="text-right">
+                                                <div className="flex items-center font-bold text-foreground">
+                                                    <DollarSign className="h-4 w-4 mr-0.5" />
+                                                    {review.pricing.amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                                                </div>
+                                                <span className="text-xs text-muted-foreground">
+                                                    per {review.pricing.period}
+                                                </span>
+                                                {review.pricing.note && (
+                                                    <span className="text-xs text-primary block mt-1">
+                                                        {review.pricing.note}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
 
                                 <Link href={review.officialLink} target="_blank" className="w-full block">
                                     <Button className="w-full h-12 text-lg shadow-primary/20 shadow-lg" size="lg">
