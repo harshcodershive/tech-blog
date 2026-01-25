@@ -19,6 +19,37 @@ export const reviewsData: Review[] = [
     // 🔽 AUTO-INSERT-START
 
     {
+        slug: "originality-ai",
+        title: "Originality.ai",
+        tagline: "The most accurate AI content detector and plagiarism checker for serious content creators",
+        rating: 4.9,
+        category: "AI Detection",
+        description: "Originality.ai is a premium AI content detection and plagiarism checking tool designed for content marketers, SEO professionals, and publishers. It accurately identifies AI-generated text from GPT-4, Claude, Gemini, and other models while simultaneously checking for plagiarism. The Chrome extension brings this powerful detection capability directly to your browser for seamless workflow integration.",
+        summary: "A must-have tool for anyone publishing content online who needs to verify originality and detect AI-generated text with industry-leading accuracy.",
+        verdict: "Originality.ai stands out as the most reliable AI detector on the market. Its Chrome extension makes it incredibly convenient to check content authenticity on-the-fly, whether you're reviewing submissions, auditing existing content, or ensuring your own work passes AI detection thresholds.",
+        pros: [
+            "Industry-leading accuracy for detecting AI-generated content",
+            "Simultaneous plagiarism and AI detection in one scan",
+            "Convenient Chrome extension for browser-based workflow",
+            "Regularly updated to detect latest AI models including GPT-4 and Claude"
+        ],
+        cons: [
+            "Credit-based pricing may not suit very high-volume users",
+            "Premium features require paid subscription",
+            "Detection results can occasionally vary on heavily edited AI content"
+        ],
+        features: [
+            "AI Content Detection with model identification",
+            "Plagiarism checker with source identification",
+            "Chrome extension for instant browser-based detection",
+            "Team collaboration and API access",
+            "Readability scoring and content analysis",
+            "Bulk scanning for large content audits"
+        ],
+        officialLink: "https://chromewebstore.google.com/detail/ai-detector-and-human-wri/kdngfaamkbbkdbemejnlkmjfpmndjdmb?pli=1"
+    },
+
+    {
         slug: "perplexity-ai",
         title: "Perplexity AI",
         tagline: "The world's first conversational search engine",
