@@ -36,6 +36,82 @@ export const reviewsData: Review[] = [
     // 🔽 AUTO-INSERT-START
 
     {
+        slug: "getresponse",
+        title: "GetResponse",
+        tagline: "All-in-one AI-powered email marketing and automation platform for growing businesses",
+        rating: 4.8,
+        category: "Email Marketing",
+        description: "GetResponse is a comprehensive marketing platform that combines powerful email marketing, marketing automation, landing pages, webinars, and SMS capabilities—all enhanced by AI. Trusted by over 350,000 entrepreneurs, e-commerce stores, and global brands across 160+ countries, it delivers a 99% email deliverability rate while offering AI-powered features that write subject lines, optimize send times, and generate content. From startups to enterprises, GetResponse scales affordably while providing the sophisticated automation workflows that drive conversions.",
+        summary: "GetResponse stands out as the complete marketing toolkit for businesses that want email marketing, automation, landing pages, webinars, and e-commerce tools in one integrated platform—without the enterprise price tag.",
+        verdict: "GetResponse delivers exceptional value for businesses seeking a unified marketing platform. The AI-powered features genuinely save time—from generating subject lines to recommending optimal send times based on individual subscriber behavior. The 99% deliverability rate is backed by real performance, and the automation workflows rival platforms costing 3x more. For e-commerce businesses, the integration with product recommendations and cart abandonment sequences makes it particularly compelling. The MAX plan provides enterprise-grade features for organizations ready to scale.",
+        pros: [
+            "99% email deliverability rate across 160+ countries",
+            "AI writes subject lines and optimizes send times automatically",
+            "Complete marketing suite: email, automation, landing pages, webinars",
+            "Conversion funnels guide customers through entire purchase journey",
+            "150+ integrations including Shopify, WordPress, and Salesforce",
+            "Webinar hosting included—rare among email marketing platforms",
+            "SMS marketing with automation triggers",
+            "24/7 customer support with 5-star ratings"
+        ],
+        cons: [
+            "Marketing Automation plan at $749/year requires commitment",
+            "Advanced features require higher-tier plans",
+            "Learning curve for complex automation workflows",
+            "Webinar attendee limits on lower plans"
+        ],
+        features: [
+            "AI-powered email generation",
+            "Marketing automation workflows",
+            "Landing page builder with AI",
+            "Webinar hosting platform",
+            "SMS marketing integration",
+            "Conversion funnel builder",
+            "E-commerce product recommendations",
+            "A/B testing for campaigns",
+            "Behavioral segmentation",
+            "Web push notifications",
+            "Course creator tools",
+            "Premium newsletter monetization"
+        ],
+        officialLink: "https://try.getresponsetoday.com/kjp2w8tsjc4v",
+        pricing: {
+            amount: 749,
+            period: 'year',
+            currency: 'USD',
+            note: 'Marketing Automation Plan'
+        },
+        detailedReview: `
+            <h3>The All-in-One Marketing Platform That Actually Delivers</h3>
+            <p>In a market crowded with email marketing tools, GetResponse distinguishes itself by being genuinely all-in-one. While competitors force you to piece together separate tools for email, landing pages, webinars, and automation, GetResponse provides everything in a single, integrated platform. For businesses tired of managing multiple subscriptions and dealing with integration headaches, this alone is transformative.</p>
+
+            <h3>AI That Actually Helps</h3>
+            <p>GetResponse's AI features go beyond marketing buzzwords. The AI email generator creates complete campaign drafts based on your goals. Subject line optimization uses machine learning to predict what will resonate with your audience. Most impressively, the send-time optimization analyzes individual subscriber behavior to deliver emails when each person is most likely to engage—not just a generic "best time to send."</p>
+
+            <h3>Marketing Automation That Scales</h3>
+            <p>The automation builder is where GetResponse truly shines:</p>
+            <ul>
+                <li><strong>Visual workflow builder:</strong> Drag-and-drop interface for complex customer journeys</li>
+                <li><strong>Behavioral triggers:</strong> Respond to opens, clicks, purchases, and website visits</li>
+                <li><strong>E-commerce automation:</strong> Cart abandonment, post-purchase sequences, product recommendations</li>
+                <li><strong>Lead scoring:</strong> Automatically qualify leads based on engagement</li>
+            </ul>
+
+            <h3>Beyond Email: Complete Marketing Suite</h3>
+            <p>GetResponse includes capabilities that competitors charge extra for. The webinar platform hosts live and on-demand sessions with up to 1,000 attendees on higher plans. Landing pages convert traffic with AI-assisted copy. Conversion funnels guide prospects from awareness to purchase. SMS marketing reaches customers directly on mobile.</p>
+
+            <h3>E-commerce Integration That Drives Revenue</h3>
+            <p>For online stores, GetResponse integrates deeply with Shopify, WooCommerce, Magento, and other platforms. AI-powered product recommendations personalize every email based on browsing and purchase history. Abandoned cart sequences recover lost revenue automatically. Transaction tracking shows exactly which campaigns drive sales.</p>
+
+            <h3>Pricing That Makes Sense</h3>
+            <p>Email Marketing starts at $19/month for essential features. Marketing Automation ($59/month) adds advanced workflows and webinars. E-commerce Marketing ($119/month) includes product recommendations and transaction tracking. For enterprises, GetResponse MAX provides dedicated support, custom infrastructure, and unlimited capabilities.</p>
+
+            <h3>The Bottom Line</h3>
+            <p>GetResponse is the rare marketing platform that delivers on its all-in-one promise without compromising on individual features. For businesses that want email marketing, automation, landing pages, and webinars without managing multiple tools, it's a compelling choice that scales from startup to enterprise.</p>
+        `
+    },
+
+    {
         slug: "originality-ai",
         title: "Originality.ai",
         tagline: "The most accurate AI content detector and plagiarism checker for serious content creators",
